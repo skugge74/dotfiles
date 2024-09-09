@@ -29,7 +29,7 @@ set incsearch                " Show matches as you type
 set ignorecase               " Ignore case when searching
 
 " Colorscheme and highlighting
-colorscheme default
+colorscheme catppuccin_mocha
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 
 " Additional useful settings
