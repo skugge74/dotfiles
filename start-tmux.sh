@@ -20,8 +20,10 @@ if [ ! -f "$CONFIG_FILE" ]; then
     exit 1
 fi
 
-# Set the PS1 prompt with the specified format
-export PS1='[\[\e[38;5;160m\]\A\[\e[0m\]](\[\e[38;5;125m\]\u\[\e[0m\])[\[\e[38;5;240m\]\w\[\e[0m\]]\$ '
+#replace default bashrc
+# TODO: if ~/.bashrc has a signature that indicates it is mine and not the default one, skip the move and cp
+mv ~/.bashrc ~/.bashrc.bak
+cp ~/dotfiles/bashrc-skugge ~/.bashrc
 
 # Start tmux with the specified configuration file
 tmux -f "$CONFIG_FILE"
