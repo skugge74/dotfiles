@@ -21,9 +21,23 @@ if [ ! -f "$CONFIG_FILE" ]; then
 fi
 
 #replace default bashrc
-# TODO: if ~/.bashrc has a signature that indicates it is mine and not the default one, skip the move and cp
-mv ~/.bashrc ~/.bashrc.bak
-cp ~/dotfiles/bashrc-skugge ~/.bashrc
+# Check if ~/.bashrc contains the signature #SKUGGE74 at the beginning
+if ! grep -q '^#SKUGGE74' ~/.bashrc; then
+    # If the signature is not found, move and copy the files
+    mv ~/.bashrc ~/.bashrc.bak
+    cp ~/dotfiles/bashrc-skugge ~/.bashrc
+else
+    echo "~/.bashrc is already yours, skipping move and copy."
+fi
+
+# Check if ~/.vim/colors exists
+if [ -d ~/.vim/colors ]; then
+    mv catppuccin_mocha.vim ~/.vim/colors/
+else
+    # Create the directory if it doesn't exist
+    mkdir -p ~/.vim/colors
+    mv catppuccin_mocha.vim ~/.vim/colors/
+fi
 
 # Start tmux with the specified configuration file
 tmux -f "$CONFIG_FILE"
