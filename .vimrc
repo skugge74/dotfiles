@@ -41,3 +41,5 @@ set showmatch                " Highlight matching parentheses
 " Better display for messages
 set cmdheight=2              " More space for displaying messages
 
+set termguicolors
+
