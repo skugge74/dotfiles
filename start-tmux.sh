@@ -39,7 +39,5 @@ else
     mv catppuccin_mocha.vim ~/.vim/colors/
 fi
 
-cp .vimrc ~/.vimrc
-
 # Start tmux with the specified configuration file
 tmux -f "$CONFIG_FILE"
