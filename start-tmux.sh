@@ -38,6 +38,9 @@ else
     mkdir -p ~/.vim/colors
     mv catppuccin_mocha.vim ~/.vim/colors/
 fi
-
+#vimrc update command
+export VIMLOC=$(pwd)
+alias updatevimrc="cp $VIMLOC/.vimrc ~/.vimrc"
+alias updatevimrc="cp .vimrc ~/.vimrc"
 # Start tmux with the specified configuration file
 tmux -f "$CONFIG_FILE"
