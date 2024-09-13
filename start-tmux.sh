@@ -25,7 +25,7 @@ fi
 if ! grep -q '^#SKUGGE74' ~/.bashrc; then
     # If the signature is not found, move and copy the files
     mv ~/.bashrc ~/.bashrc.bak
-    cp ~/dotfiles/bashrc-skugge ~/.bashrc
+    cp bashrc-skugge ~/.bashrc
 else
     echo "~/.bashrc is already yours, skipping move and copy."
 fi
