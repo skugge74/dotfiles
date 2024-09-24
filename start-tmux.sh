@@ -38,7 +38,7 @@ if [ -d ~/.vim/colors ]; then
 else
     # Create the directory if it doesn't exist
     mkdir -p ~/.vim/colors
-    mv catppuccin_mocha.vim ~/.vim/colors/
+    cp catppuccin_mocha.vim ~/.vim/colors/
 fi
 
 cp vimrc ~/.vimrc
