@@ -32,14 +32,10 @@ else
     echo "~/.bashrc is already yours, skipping move and copy."
 fi
 
-# Check if ~/.vim/colors exists
-if [ -d ~/.vim/colors ]; then
-    mv catppuccin_mocha.vim ~/.vim/colors/
-else
-    # Create the directory if it doesn't exist
+if [! -d ~/.vim/colors ]; then
     mkdir -p ~/.vim/colors
-    cp catppuccin_mocha.vim ~/.vim/colors/
 fi
+    cp catppuccin_mocha.vim ~/.vim/colors/
 
 cp vimrc ~/.vimrc
 
