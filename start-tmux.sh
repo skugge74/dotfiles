@@ -7,6 +7,7 @@ if [ -z "$1" ]; then
 fi
 
 CONFIG_FILE="$1"
+SIGNATURE="abcde..."
 
 # Check if the file exists
 if [ ! -f "$CONFIG_FILE" ]; then
@@ -22,7 +23,8 @@ fi
 
 #replace default bashrc
 # Check if ~/.bashrc contains the signature #SKUGGE74 at the beginning
-if ! grep -q '^#SKUGGE74' ~/.bashrc; then
+#if ! grep -q '^#SKUGGE74' ~/.bashrc; then
+ if [[ ! $(md5sum ~/.bashrc) == '$SIGNATURE' ]]; then
     # If the signature is not found, move and copy the files
     mv ~/.bashrc ~/.bashrc.bak
     cp bashrc-skugge ~/.bashrc
@@ -38,6 +40,8 @@ else
     mkdir -p ~/.vim/colors
     mv catppuccin_mocha.vim ~/.vim/colors/
 fi
+
+cp vimrc ~/.vimrc
 
 # Start tmux with the specified configuration file
 tmux -f "$CONFIG_FILE"
