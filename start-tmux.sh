@@ -32,7 +32,7 @@ else
     echo "~/.bashrc is already yours, skipping move and copy."
 fi
 
-if [! -d ~/.vim/colors ]; then
+if [[ ! -d ~/.vim/colors ]]; then
     mkdir -p ~/.vim/colors
 fi
     cp catppuccin_mocha.vim ~/.vim/colors/
