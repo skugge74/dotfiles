@@ -7,7 +7,7 @@ if [ -z "$1" ]; then
 fi
 
 CONFIG_FILE="$1"
-SIGNATURE="abcde..."
+SIGNATURE=$(md5sum bashrc-skugge)
 
 # Check if the file exists
 if [ ! -f "$CONFIG_FILE" ]; then
