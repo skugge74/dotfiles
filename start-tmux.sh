@@ -22,8 +22,6 @@ if [[ ! "$CONFIG_FILE" == *.conf ]]; then
 fi
 
 #replace default bashrc
-# Check if ~/.bashrc contains the signature #SKUGGE74 at the beginning
-#if ! grep -q '^#SKUGGE74' ~/.bashrc; then
  if [[ ! $(md5sum ~/.bashrc) == '$SIGNATURE' ]]; then
     # If the signature is not found, move and copy the files
     mv ~/.bashrc ~/.bashrc.bak
