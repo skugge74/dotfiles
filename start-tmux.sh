@@ -33,7 +33,7 @@ fi
 if [[ ! -d ~/.vim/colors ]]; then
     mkdir -p ~/.vim/colors
 fi
-    cp catppuccin_mocha.vim ~/.vim/colors/
+    cp *.vim ~/.vim/colors/
 
 cp vimrc ~/.vimrc
 
