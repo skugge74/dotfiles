@@ -7,6 +7,8 @@ set wildmenu                 " Enhanced command-line completion
 set wildmode=list:longest    " Complete the longest common match, then list all matches
 set background=dark          " Dark background for colorschemes
 
+set scrolloff=5
+
 " Enable filetype detection and plugins
 filetype on
 filetype plugin on
