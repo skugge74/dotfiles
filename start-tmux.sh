@@ -7,7 +7,6 @@ if [ -z "$1" ]; then
 fi
 
 CONFIG_FILE="$1"
-SIGNATURE=$(md5sum bashrc-skugge)
 
 # Check if the file exists
 if [ ! -f "$CONFIG_FILE" ]; then
@@ -20,22 +19,6 @@ if [[ ! "$CONFIG_FILE" == *.conf ]]; then
     echo "Error: Configuration file must have a .conf extension."
     exit 1
 fi
-
-#replace default bashrc
- if [[ ! $(md5sum ~/.bashrc) == '$SIGNATURE' ]]; then
-    # If the signature is not found, move and copy the files
-    mv ~/.bashrc ~/.bashrc.bak
-    cp bashrc-skugge ~/.bashrc
-else
-    echo "~/.bashrc is already yours, skipping move and copy."
-fi
-
-if [[ ! -d ~/.vim/colors ]]; then
-    mkdir -p ~/.vim/colors
-fi
-    cp *.vim ~/.vim/colors/
-
-cp vimrc ~/.vimrc
 
 # Start tmux with the specified configuration file
 tmux -f "$CONFIG_FILE"
