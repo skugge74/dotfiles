@@ -22,4 +22,8 @@ cp *.vim ~/.vim/colors/
 # Copy vimrc to home
 cp vimrc ~/.vimrc
 
+mkdir -p ~/.local/share/fonts/
+cp ./fonts/*.ttf ~/.local/share/fonts/
+fc-cache -f -v
+
 echo "Installation complete! You can now run ./start-tmux.sh <tmux-config-file>"
